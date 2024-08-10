@@ -56,7 +56,36 @@ public class Processo {
                 os1.addObservacao(novaObserv);
             }
             else if (opcao == 5){
-                
+                System.out.println("Qual informação deseja alterar?");
+                System.out.println("1 - Alterar Cliente" +
+                                   "\n2 - Alterar Técnico" +
+                                   "\n3 - Alterar tempo de Serviço" +
+                                   "\n4 - Alterar Laudo Técnico" +
+                                   "\n0 - Voltar");
+                int opcao2 = sc.nextInt();
+                if (opcao2 == 1){
+                    System.out.println("Entre com o novo cliente");
+                    String novoCliente = sc.next();
+                    os1.atualizarCliente(novoCliente);
+                }
+                else if (opcao2 == 2){
+                    System.out.println("Entre com o novo Técnico");
+                    String novoTecnico = sc.next();
+                    os1.atualizarTecnico(novoTecnico);
+                }
+                else if (opcao2 == 3){
+                    System.out.println("QUal o tempo de serviço?");
+                    int novaHora = sc.nextInt();
+                    os1.atualizarTempoServico(novaHora);
+                }
+                else if (opcao2 == 4){
+                    System.out.println("Entre com o novo laudo");
+                    String novoLaudo = sc.next();
+                    os1.atualizarLaudo(novoLaudo);
+                }
+                else if (opcao2 == 0){
+                    continue;
+                }
             }
             else if (opcao == 6){
                 System.out.println("O Valor a cobrar da Ordem é: \n" + os1.valorPagar());
@@ -65,7 +94,9 @@ public class Processo {
                 System.out.println("Até mais!");
                 exit = false;
             }
-
+            else {
+                System.out.println("Insira uma opção valida.");
+            }
         }
     }
 }

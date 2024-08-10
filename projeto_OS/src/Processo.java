@@ -17,13 +17,7 @@ public class Processo {
 
         while(exit) {
             System.out.println("Oque deseja fazer?");
-            System.out.println("1 - Criar Ordem de Serviço: " +
-                               "\n2 - Imprimir Ordem de Serviço: " +
-                               "\n3 - Mudar Status da Ordem de Serviço: " +
-                               "\n4 - Adicionar uma Observação: " +
-                               "\n5 - Atualizar as informações: " +
-                               "\n6 - Checar valor a pagar: " +
-                               "\n7 - Sair");
+            System.out.println(os);
 
             int opcao = sc.nextInt();
             if(opcao == 1){
@@ -57,11 +51,7 @@ public class Processo {
             }
             else if (opcao == 5){
                 System.out.println("Qual informação deseja alterar?");
-                System.out.println("1 - Alterar Cliente" +
-                                   "\n2 - Alterar Técnico" +
-                                   "\n3 - Alterar tempo de Serviço" +
-                                   "\n4 - Alterar Laudo Técnico" +
-                                   "\n0 - Voltar");
+                System.out.println(os.alteracao());
                 int opcao2 = sc.nextInt();
                 if (opcao2 == 1){
                     System.out.println("Entre com o novo cliente");

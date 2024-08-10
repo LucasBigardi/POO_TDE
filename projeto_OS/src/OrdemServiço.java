@@ -50,4 +50,22 @@ public class OrdemServiço {
         this.laudo = laudo;
     }
 
+    public String toString(){
+        return "1 - Criar Ordem de Serviço: " +
+                "\n2 - Imprimir Ordem de Serviço: " +
+                "\n3 - Mudar Status da Ordem de Serviço: " +
+                "\n4 - Adicionar uma Observação: " +
+                "\n5 - Atualizar as informações: " +
+                "\n6 - Checar valor a pagar: " +
+                "\n7 - Sair";
+    }
+
+    public String alteracao(){
+        return "1 - Alterar Cliente" +
+                "\n2 - Alterar Técnico" +
+                "\n3 - Alterar tempo de Serviço" +
+                "\n4 - Alterar Laudo Técnico" +
+                "\n0 - Voltar";
+    }
+
 }

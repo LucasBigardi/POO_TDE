@@ -6,23 +6,33 @@ public class OrdemServiço {
     public String observacao;
     public String laudo;
 
-    public int numeroOrdem = 0;
+    public static int numeroOrdem = 0;
     public String status = "Em aberto";
-    public double valorHora = 180;
+    public static double valorHora = 180;
+
+    public OrdemServiço(){
+    }
+
+    public OrdemServiço(String Cliente, String Tecnico, double tempoServico, String observacao, String laudo){
+        this.cliente = Cliente;
+        this.tecnico = Tecnico;
+        this.horas_servico = tempoServico;
+        this.observacao = observacao;
+        this.laudo = laudo;
+    }
 
     public void imprimirOrdem(){
         System.out.println("Número da OS: " + numeroOrdem +
-                           "\nCliente: " + cliente +
-                           "\nTécnico: " + tecnico +
-                           "\nHoras de serviço (em minutos): " + horas_servico +
-                           "\nLaudo Técnico: " + laudo +
-                           "\nObservações: " + observacao +
-                           "\nSituação: " + status);
+                           "\nCliente: " + this.cliente +
+                           "\nTécnico: " + this.tecnico +
+                           "\nHoras de serviço (em minutos): " + this.horas_servico +
+                           "\nLaudo Técnico: " + this.laudo +
+                           "\nObservações: " + this.observacao +
+                           "\nSituação: " + this.status);
 
     }
 
-    public void contadorOrdem(){
-        this.numeroOrdem++;
+    public void contadorOrdem(){numeroOrdem++;
     }
 
     public void addObservacao(String observacao){
@@ -50,7 +60,7 @@ public class OrdemServiço {
         this.laudo = laudo;
     }
 
-    public String toString(){
+    public static String inicio(){
         return "1 - Criar Ordem de Serviço: " +
                 "\n2 - Imprimir Ordem de Serviço: " +
                 "\n3 - Mudar Status da Ordem de Serviço: " +
@@ -60,7 +70,7 @@ public class OrdemServiço {
                 "\n7 - Sair";
     }
 
-    public String alteracao(){
+    public static String alteracao(){
         return "1 - Alterar Cliente" +
                 "\n2 - Alterar Técnico" +
                 "\n3 - Alterar tempo de Serviço" +

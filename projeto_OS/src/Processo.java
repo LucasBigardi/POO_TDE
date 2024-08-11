@@ -9,76 +9,74 @@ public class Processo {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        OrdemServiço os = new OrdemServiço();
         boolean exit = true;
-
-        OrdemServiço os1;
-        os1 = new OrdemServiço();
+        OrdemServiço os = new OrdemServiço();
 
         while(exit) {
             System.out.println("Oque deseja fazer?");
-            System.out.println(os);
+            System.out.println(OrdemServiço.inicio());
 
             int opcao = sc.nextInt();
             if(opcao == 1){
-                os1.mudarStatus("Em Aberto");
                 System.out.println("Entre com as informações da Ordem de Serviço");
-                os1.contadorOrdem();
-                System.out.println("Ordem de Serviço Número: " + os1.numeroOrdem);
+                os.contadorOrdem();
+                os.mudarStatus("Em Aberto");
+                System.out.println("Ordem de Serviço Número: " + OrdemServiço.numeroOrdem);
                 System.out.println("Cliente: ");
-                os1.cliente = sc.next();
+                os.cliente = sc.next();
                 System.out.println("Técnico: ");
-                os1.tecnico = sc.next();
+                os.tecnico = sc.next();
                 System.out.println("Horas de Serviço (em minutos): ");
-                os1.horas_servico = sc.nextDouble();
+                os.horas_servico = sc.nextDouble();
                 System.out.println("Laudo: ");
-                os1.laudo = sc.next();
+                os.laudo = sc.next();
                 System.out.println("Observações: ");
-                os1.observacao = sc.next();
+                os.observacao = sc.next();
+
             }
             else if(opcao == 2){
-                os1.imprimirOrdem();
+                os.imprimirOrdem();
             }
             else if (opcao == 3){
                 System.out.println("Qual o novo status da OS?");
                 String novoStatus = sc.next();
-                os1.mudarStatus(novoStatus);
+                os.mudarStatus(novoStatus);
             }
             else if (opcao == 4) {
                 System.out.println("Adicione nova observação");
                 String novaObserv = sc.next();
-                os1.addObservacao(novaObserv);
+                os.addObservacao(novaObserv);
             }
             else if (opcao == 5){
                 System.out.println("Qual informação deseja alterar?");
-                System.out.println(os.alteracao());
+                System.out.println(OrdemServiço.alteracao());
                 int opcao2 = sc.nextInt();
                 if (opcao2 == 1){
                     System.out.println("Entre com o novo cliente");
                     String novoCliente = sc.next();
-                    os1.atualizarCliente(novoCliente);
+                    os.atualizarCliente(novoCliente);
                 }
                 else if (opcao2 == 2){
                     System.out.println("Entre com o novo Técnico");
                     String novoTecnico = sc.next();
-                    os1.atualizarTecnico(novoTecnico);
+                    os.atualizarTecnico(novoTecnico);
                 }
                 else if (opcao2 == 3){
                     System.out.println("QUal o tempo de serviço?");
                     int novaHora = sc.nextInt();
-                    os1.atualizarTempoServico(novaHora);
+                    os.atualizarTempoServico(novaHora);
                 }
                 else if (opcao2 == 4){
                     System.out.println("Entre com o novo laudo");
                     String novoLaudo = sc.next();
-                    os1.atualizarLaudo(novoLaudo);
+                    os.atualizarLaudo(novoLaudo);
                 }
                 else if (opcao2 == 0){
                     continue;
                 }
             }
             else if (opcao == 6){
-                System.out.println("O Valor a cobrar da Ordem é: \n" + os1.valorPagar());
+                System.out.println("O Valor a cobrar da Ordem é: \n" + os.valorPagar());
             }
             else if (opcao == 7){
                 System.out.println("Até mais!");

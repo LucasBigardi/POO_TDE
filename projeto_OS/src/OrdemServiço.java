@@ -12,7 +12,7 @@ public class OrdemServiço {
 
     public OrdemServiço(){
     }
-
+    
     public OrdemServiço(String Cliente, String Tecnico, double tempoServico, String observacao, String laudo){
         this.cliente = Cliente;
         this.tecnico = Tecnico;
